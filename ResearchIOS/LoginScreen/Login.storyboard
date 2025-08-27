@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24123.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_3" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24062"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -11,22 +11,89 @@
         <!--Login View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="LoginViewController" customModule="ResearchIOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="LoginViewController" storyboardIdentifier="LoginViewController" id="Y6W-OH-hqX" customClass="LoginViewController" customModule="ResearchIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="veS-Xx-hlb">
+                                <rect key="frame" x="32" y="237" width="338" height="456"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Dn0-Hp-n4A">
+                                        <rect key="frame" x="22" y="42" width="294" height="166"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDx-RM-nLA">
+                                                <rect key="frame" x="0.0" y="0.0" width="294" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" restorationIdentifier="tfUsername" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b1r-iv-w8r">
+                                                <rect key="frame" x="0.0" y="44" width="294" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbG-ga-ECq">
+                                                <rect key="frame" x="0.0" y="88" width="294" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" restorationIdentifier="tfPassword" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nQG-GB-tre">
+                                                <rect key="frame" x="0.0" y="132" width="294" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="btnLogin" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JyB-92-bR7">
+                                        <rect key="frame" x="30" y="249.00000000000003" width="278" height="38.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Login"/>
+                                        <connections>
+                                            <action selector="login_Clicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="qK6-1K-ERN"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="JyB-92-bR7" secondAttribute="trailing" constant="30" id="9dj-dI-At0"/>
+                                    <constraint firstItem="Dn0-Hp-n4A" firstAttribute="leading" secondItem="veS-Xx-hlb" secondAttribute="leading" constant="22" id="Iqh-t0-8HA"/>
+                                    <constraint firstItem="Dn0-Hp-n4A" firstAttribute="top" secondItem="veS-Xx-hlb" secondAttribute="top" constant="42" id="Jl0-Za-Iju"/>
+                                    <constraint firstItem="JyB-92-bR7" firstAttribute="leading" secondItem="veS-Xx-hlb" secondAttribute="leading" constant="30" id="PZu-yq-hvc"/>
+                                    <constraint firstItem="JyB-92-bR7" firstAttribute="centerX" secondItem="veS-Xx-hlb" secondAttribute="centerX" id="T19-Om-NJV"/>
+                                    <constraint firstItem="JyB-92-bR7" firstAttribute="centerX" secondItem="veS-Xx-hlb" secondAttribute="centerX" id="fTg-ue-f5W"/>
+                                    <constraint firstItem="JyB-92-bR7" firstAttribute="top" secondItem="Dn0-Hp-n4A" secondAttribute="bottom" constant="41" id="iso-Lg-Ck6"/>
+                                    <constraint firstAttribute="trailing" secondItem="Dn0-Hp-n4A" secondAttribute="trailing" constant="22" id="xAq-WF-XwQ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="veS-Xx-hlb" secondAttribute="bottom" constant="113" id="9bi-UN-K8a"/>
+                            <constraint firstItem="veS-Xx-hlb" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="113" id="aoY-XS-1gA"/>
+                            <constraint firstItem="veS-Xx-hlb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="32" id="eBk-Ef-HMd"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="veS-Xx-hlb" secondAttribute="trailing" constant="32" id="v3I-Dp-dYB"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Jdb-Wg-H21"/>
+                    <connections>
+                        <outlet property="txtPassword" destination="nQG-GB-tre" id="hkN-JI-8Wl"/>
+                        <outlet property="txtUserName" destination="b1r-iv-w8r" id="L2s-sd-8tv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="131"/>
+            <point key="canvasLocation" x="1058.2089552238806" y="130.43478260869566"/>
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529410000001" green="0.69019607839999997" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
